@@ -186,10 +186,9 @@ while ch != 8:
     print("\t7. MODIFY AN ACCOUNT")
     print("\t8. EXIT")
     print("\tSelect Your Option (1-8) ")
-    ch = input()
     #system("cls");
     
-    if ch == '1':
+    if (ch := input()) == '1':
         writeAccount()
     elif ch =='2':
         num = int(input("\tEnter The account No. : "))

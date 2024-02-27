@@ -70,8 +70,7 @@ def diag_win(board, player):
             win = False
     if win:
         return win
-    win = True
-    if win:
+    if win := True:
         for x in range(len(board)):
             y = len(board) - 1 - x
             if board[x, y] != player:
@@ -107,8 +106,7 @@ def play_game():
             print(board)
             sleep(2)
             counter += 1
-            winner = evaluate(board)
-            if winner != 0:
+            if (winner := evaluate(board)) != 0:
                 break
     return(winner)
   
