@@ -1,6 +1,8 @@
 import pickle
 import os
 import pathlib
+import fickling
+
 class Account :
     accNo = 0
     name = ''
@@ -65,7 +67,7 @@ def displayAll():
     file = pathlib.Path("accounts.data")
     if file.exists ():
         infile = open('accounts.data','rb')
-        mylist = pickle.load(infile)
+        mylist = fickling.load(infile)
         for item in mylist :
             print(item.accNo," ", item.name, " ",item.type, " ",item.deposit )
         infile.close()
@@ -77,7 +79,7 @@ def displaySp(num):
     file = pathlib.Path("accounts.data")
     if file.exists ():
         infile = open('accounts.data','rb')
-        mylist = pickle.load(infile)
+        mylist = fickling.load(infile)
         infile.close()
         found = False
         for item in mylist :
@@ -93,7 +95,7 @@ def depositAndWithdraw(num1,num2):
     file = pathlib.Path("accounts.data")
     if file.exists ():
         infile = open('accounts.data','rb')
-        mylist = pickle.load(infile)
+        mylist = fickling.load(infile)
         infile.close()
         os.remove('accounts.data')
         for item in mylist :
@@ -121,7 +123,7 @@ def deleteAccount(num):
     file = pathlib.Path("accounts.data")
     if file.exists ():
         infile = open('accounts.data','rb')
-        oldlist = pickle.load(infile)
+        oldlist = fickling.load(infile)
         infile.close()
         newlist = []
         for item in oldlist :
@@ -137,7 +139,7 @@ def modifyAccount(num):
     file = pathlib.Path("accounts.data")
     if file.exists ():
         infile = open('accounts.data','rb')
-        oldlist = pickle.load(infile)
+        oldlist = fickling.load(infile)
         infile.close()
         os.remove('accounts.data')
         for item in oldlist :
@@ -157,7 +159,7 @@ def writeAccountsFile(account) :
     file = pathlib.Path("accounts.data")
     if file.exists ():
         infile = open('accounts.data','rb')
-        oldlist = pickle.load(infile)
+        oldlist = fickling.load(infile)
         oldlist.append(account)
         infile.close()
         os.remove('accounts.data')
