@@ -1,6 +1,6 @@
-import random
+import secrets
 
-num = random.randint(1, 10)
+num = secrets.SystemRandom().randint(1, 10)
 guess = None
 
 while guess != num:
